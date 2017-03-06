@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/626b57f9-6ef0-475a-ae12-40a44aca7eff
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:3030
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"82e00411f5b13dc939a37250f3ce8a0e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9e909a62-f505-4f5b-bfb5-a097fdfe7389
+      X-Runtime:
+      - '0.181579'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "<http://id.ukpds.org/626b57f9-6ef0-475a-ae12-40a44aca7eff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://id.ukpds.org/schema/Person> .\n"
+    http_version: 
+  recorded_at: Mon, 06 Mar 2017 13:48:59 GMT
+recorded_with: VCR 3.0.3

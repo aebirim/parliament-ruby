@@ -1,8 +1,17 @@
 module Parliament
   module Decorators
     module House
+
       def name
         respond_to?(:houseName) ? houseName : ''
+      end
+
+      def commons
+        house_of_lords_id
+      end
+
+      def lords
+        house_of_lords_id
       end
 
       def seat_incumbencies
@@ -22,6 +31,12 @@ module Parliament
 
       def house_incumbencies
         respond_to?(:houseHasHouseIncumbency) ? houseHasHouseIncumbency : []
+      end
+
+      private
+
+      def house_of_lords_id
+        respond_to?(:graph_id) ? graph_id : ''
       end
     end
   end

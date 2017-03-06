@@ -7,13 +7,13 @@ describe Parliament::Decorators::House, vcr: true do
 
   describe '#name' do
     before(:each) do
+     # binding.pry
       @house_nodes = response.filter('http://id.ukpds.org/schema/House')
     end
 
     context 'Grom::Node has all the required objects' do
       it 'returns the name for a Grom::Node object of type House' do
         house_node = @house_nodes.first
-
         expect(house_node.name).to eq('House of Commons')
       end
     end
@@ -21,8 +21,35 @@ describe Parliament::Decorators::House, vcr: true do
     context 'Grom::Node has no name' do
       it 'returns an empty string' do
         house_node = @house_nodes.first
-
         expect(house_node.name).to eq('')
+      end
+    end
+  end
+
+  describe '#commons' do
+    before(:each) do
+      # binding.pry
+      @house_nodes = response.filter('http://id.ukpds.org/schema/House')
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the id for a Grom::Node object with house name of House of Commons' do
+        house_node = @house_nodes.first
+        expect(house_node.commons).to eq('c2d41b82-d4df-4f50-b0f9-f52b84a6a788')
+      end
+    end
+  end
+
+  describe '#lords' do
+    before(:each) do
+      # binding.pry
+      @house_nodes = response.filter('http://id.ukpds.org/schema/House')
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the id for a Grom::Node object with house name of House of Lords' do
+        house_node = @house_nodes.last
+        expect(house_node.lords).to eq('f1a325bf-f550-48a5-ad40-e30cb7b7bdf4')
       end
     end
   end
